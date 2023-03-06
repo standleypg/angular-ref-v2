@@ -1,0 +1,24 @@
+<fieldset>
+    <fieldset>
+        <h4>ngIf</h4>
+        <span *ngIf="isTrue">ngif activated</span>
+        <button (click)="isTrue=!isTrue">{{isTrue?'Deactive':'Active'}} text</button>
+    </fieldset>
+    <fieldset>
+        <h4>ngFor</h4>
+    <div *ngFor="let item of items">
+        <span>{{item.name}}</span>
+    </div>
+    </fieldset>
+    <fieldset>
+        <h4>ngSwitch</h4>
+    <div [ngSwitch]="switchName">
+        <div *ngSwitchCase="'Yoshi'">Yoshi</div>
+        <div *ngSwitchCase="'Youshua'">Youshua</div>
+        <div *ngSwitchDefault>Mario</div>
+    </div>
+    <button (click)="switchName='Mario'">Mario</button>
+    <button (click)="switchName='Yoshi'">Yoshi</button>
+    <button (click)="switchName='Youshua'">Youshua</button>
+    </fieldset>
+</fieldset>

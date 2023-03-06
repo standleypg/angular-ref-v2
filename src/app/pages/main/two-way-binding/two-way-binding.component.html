@@ -1,0 +1,39 @@
+<fieldset>
+  <p
+    [style]="{
+      fontSize: fontSize + 'px'
+    }"
+  >
+    Two way binding
+  </p>
+  <button (click)="decreaseFontSize()">-</button>
+  <button (click)="increaseFontSize()">+</button>
+
+  <fieldset>
+    <h4>
+      Template variable
+      <span style="color: red"
+        >Might not visible in web, pls refer to the code instead!</span
+      >
+    </h4>
+    <app-code-field>
+      <code code>
+        <h5>Code Example</h5>
+        <p>
+            < label for="text">Enter text here< />
+        </p>
+        <p>
+            < input <span class="code">#text</span> type="text" name="text" id="text" />
+        </p>
+        <p>
+            < button (click)="alertInputValue(<span class="code">text.value</span>)">Click here to alert value from input < />
+        </p>
+      </code>
+    </app-code-field>
+    <label for="text">Enter text here</label>
+    <input #text type="text" name="text" id="text" />
+    <button (click)="alertInputValue(text.value)">
+      Click here to alert value from input
+    </button>
+  </fieldset>
+</fieldset>

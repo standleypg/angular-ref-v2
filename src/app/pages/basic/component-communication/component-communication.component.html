@@ -1,0 +1,26 @@
+<fieldset>
+  <h2>This is parent component</h2>
+
+  <p>
+    Message from child:
+    <span style="color: orangered">{{ messageFromChild }}</span>
+  </p>
+  <button (click)="alertFromChild()">Trigger function from child</button>
+  <button (click)="alertViewMessageFromChild()">
+    alert message from child
+  </button>
+  <app-child
+    [message]="'this message is send from parent'"
+    (messageEvent)="receiveMessageFromChild($event)"
+  >
+    This paragraph is passed from parent to child using ngContent. For ngContent
+    with selector, refer to the code and uncomment it to show how it works.
+    <p selector1>This is text from Selector1</p>
+    <p selector2>This is text from Selector2</p>
+  </app-child>
+</fieldset>
+<!-- <nav>
+  <a routerLink="child">Child</a>
+</nav> -->
+
+<router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+<p *ngIf="!result?.docs">Loading..</p>
+<div *ngIf="result?.docs">
+<ul>
+    <li *ngFor="let item of result?.docs">
+        <span>Name: {{item.name}}</span>
+        <br>
+        <span>Rotten Tomatoes Score: {{item.rottenTomatoesScore}}</span>
+        <br>
+        <br>
+    </li>
+</ul>
+</div>

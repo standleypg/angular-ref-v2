@@ -1,0 +1,21 @@
+.app-wrapper,
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-wrapper {
+    flex-direction: column;
+}
+
+hr {
+    width: 90%;
+    opacity: 0.5;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+}

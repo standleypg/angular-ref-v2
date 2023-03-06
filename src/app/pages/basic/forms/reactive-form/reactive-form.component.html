@@ -1,0 +1,41 @@
+<p style="color: orangered">
+  Important to import ReactiveFormsModule from @angular/forms
+</p>
+
+<h4>Reactive Form</h4>
+<i> <small>Suitable for complex forms</small></i>
+<fieldset>
+  <fieldset>
+    <span>Simple example</span>
+    <br />
+    <br />
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" [formControl]="name" />
+    <p>Value: {{ name.value }}</p>
+    <button (click)="name.setValue('')">Reset input</button>
+  </fieldset>
+
+  <fieldset>
+    <span>Real validation example</span>
+    <br />
+    <br />
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <label for="first-name">First Name: </label>
+      <input type="text" name="first-name" id="first-name" formControlName="firstname">
+     
+      <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)" >
+        <div *ngIf="firstname?.errors?.['required']">
+          Name is required
+        </div>
+        <div *ngIf="firstname?.errors?.['minlength']">
+          Name must be at least 4 characters long
+        </div>
+      </div>
+
+      <label for="last-name">Last Name: </label>
+      <input type="text" name="last-name" id="last-name" formControlName="lastname">
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+  </fieldset>
+</fieldset>

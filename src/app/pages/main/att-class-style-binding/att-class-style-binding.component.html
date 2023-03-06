@@ -1,0 +1,39 @@
+<div>
+  <fieldset>
+    <ul>
+      <li>
+        <h4>Attribute binding example</h4>
+        <fieldset>
+          <tr>
+            <td [attr.colspan]="1 + 1">one-tow</td>
+          </tr>
+        </fieldset>
+      </li>
+      <li>
+        <h4>Property binding example</h4>
+        <fieldset>
+          <div [class.sale]="onSale">check sale class in inspect object</div>
+          <div [class]="{ object: true, object2: false }">
+            check object class in inspect object
+          </div>
+        </fieldset>
+      </li>
+      <li>
+        <h4>Style binding example</h4>
+        <fieldset>
+          <span>Choosen color: </span>
+          <div
+            [style]="{
+              backgroundColor: color,
+              width: '20px',
+              height: '20px'
+            }"
+          ></div>
+          <label for="color">Color picker: </label>
+          <input type="color" name="color" id="color" [(ngModel)]="color" />
+          <span>{{ color }}</span>
+        </fieldset>
+      </li>
+    </ul>
+  </fieldset>
+</div>

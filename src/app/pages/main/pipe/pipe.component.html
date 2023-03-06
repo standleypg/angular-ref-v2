@@ -1,0 +1,30 @@
+<fieldset>
+  <fieldset>
+    <p>| date</p>
+    <span>
+      {{ todayDate | date }}
+    </span>
+  </fieldset>
+  <fieldset>
+    <p>| date: short</p>
+    <span>
+      {{ todayDate | date : "short" }}
+    </span>
+  </fieldset>
+  <fieldset>
+    <p>| date: long</p>
+    <span>
+      {{ todayDate | date : "long" }}
+    </span>
+  </fieldset>
+  <fieldset>
+    <p>| date: 'dd/MM/yy HH:mm'</p>
+    <span>
+      {{ todayDate | date : "dd.MM.yy HH:mm" }}
+    </span>
+  </fieldset>
+  <fieldset>
+    <p>Custom Pipe - refer to pipes folder structure</p>
+    <span style="color: orangered">{{ "Mario!" | greetingPipe }}</span>
+  </fieldset>
+</fieldset>

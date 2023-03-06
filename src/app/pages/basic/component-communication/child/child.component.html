@@ -1,0 +1,17 @@
+<fieldset>
+  <h5>This is child component</h5>
+  <p>
+    @Input() from parent <b style="color: red">{{ message }}</b>
+  </p>
+  <button (click)="sendMessage()">Send Message to Parent</button>
+  <fieldset>
+    <h4>ngContent Example</h4>
+    <ng-content></ng-content>
+
+    <fieldset>
+      <h4>ngContent with selector</h4>
+      <ng-content [selector1]></ng-content>
+      <ng-content [selector2]></ng-content>
+    </fieldset>
+  </fieldset>
+</fieldset>

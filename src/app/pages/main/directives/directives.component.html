@@ -1,0 +1,22 @@
+<fieldset class="fieldset-flex-col">
+  <p [ngClass]="{ red: isRed, blue: !isRed }">
+    Toggle ngClass button to active or deactive the class
+  </p>
+  <button (click)="onClickChangeColor()">ngClass</button>
+  <p [ngStyle]="isCustomStyleEnabled ? currentSyle : ''">
+    Toggle ngStyle button to active or deactive custom style
+  </p>
+  <button (click)="onChangeStyle()">ngStyle</button>
+
+  <h5>ngModel requires FormsModule from @angular/forms</h5>
+  <label for="name">{{ name }}</label>
+  <input type="text" name="name" id="name" [(ngModel)]="name" />
+
+  <h5 appHighlight [hightlightColor]="'yellow'">use highlight.directive.ts example</h5>
+  <app-code-field>
+    <code code>
+        constructor(el: ElementRef) 
+      el.nativeElement.style.backgroundColor = 'yellow'; 
+    </code>
+  </app-code-field>
+</fieldset>
